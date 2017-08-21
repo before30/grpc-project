@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: grpc_server
+
+server:
+  port: 8182

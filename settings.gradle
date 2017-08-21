@@ -1,0 +1,20 @@
+include 'mygrpc', 'mygrpc-samples', 'mygrpc-starters'
+
+project(':mygrpc-starters').with {
+	def starters = it.name
+	file(it.projectDir).eachDir { dir ->
+		if (new File('build.gradle', dir).exists()) {
+			include "$starters:${dir.name}"
+		}
+	}
+}
+
+project(':mygrpc-samples').with {
+	def starters = it.name
+	file(it.projectDir).eachDir { dir ->
+		if (new File('build.gradle', dir).exists()) {
+			include "$starters:${dir.name}"
+		}
+	}
+}
+

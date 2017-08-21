@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "HelloGrpcProto";
+
+package cc.before30.mygrpc.samples.protobuf;
+
+message HelloRequest {
+    string hello = 1;
+}
+
+message HelloResponse {
+    string welcomeMessage = 1;
+}
+
+service Greeter {
+    rpc SayHello (HelloRequest) returns (HelloResponse) {}
+    rpc SayHello2 (HelloRequest) returns (stream HelloResponse) {}
+}

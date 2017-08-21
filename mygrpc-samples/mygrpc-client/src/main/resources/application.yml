@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: grpc-client
+
+grpc:
+  channels:
+    local1:
+      url: property://local1
+      servers:
+        - 127.0.0.1:8888
+        - 127.0.0.1:8888
+      plaintext: true
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      keepAliveTime: 123
+      keepAliveTimeout: 12
+    local2:
+      url: property://local2
+      servers:
+        - 127.0.0.1:8888
+        - 127.0.0.1:8888
+      plaintext: true
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      keepAliveTime: 123
+      keepAliveTimeout: 12
+
+
+
